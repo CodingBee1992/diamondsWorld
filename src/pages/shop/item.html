@@ -40,79 +40,101 @@
       </div>
     </nav>
   </header>
-  <!--  ============== PRODUCT LIST ============== -->
-  <section class="product section container" id="product">
-    <div class="product__nav">
-      <div class="product__breadcrumbs">
-
-      </div>
-      <div class="product__title">Diamonds</div>
-    </div>
-
-    <div class="product__container grid">
-
-      <div class="product__card" data-id="1">
-        <div class="product__tag" data-id="1" data-name="Diamond" data-category="Luxury" data-price="999" >
-          <a href="item.html" class="product__tag-card">
-            <div class="product__box">
-              <img src="../../assets/img/productsD.jpg" alt="" class="product__box-img">
-              <div class="swiper product__swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/crystal.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/emerald.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/flyd.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/topaz.jpg" alt="" class="product__swiper-img"></div>
-                </div>
-              </div>
+  <!--  ============== ITEM ============== -->
+  <section class="item section container" id="item">
+    <div class="item__container grid">
+      <div class="item__slider" data-id="1">
+        <div class="item__thumbs">
+          <div class="item__thumb active" data-index="0">
+            <img src="../../assets/img/crystal.jpg" alt="" class="item__thumb-img">
+          </div>
+          <div class="item__thumb active" data-index="1">
+            <img src="../../assets/img/crystal.jpg" alt="" class="item__thumb-img">
+          </div>
+          <div class="item__thumb active" data-index="1">
+            <img src="../../assets/img/crystal.jpg" alt="" class="item__thumb-img">
+          </div>
+          <div class="item__thumb active" data-index="1">
+            <img src="../../assets/img/crystal.jpg" alt="" class="item__thumb-img">
+          </div>
+        </div>
+        <div class="swiper item__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide item__swiper-box">
+              <img src="../../assets/img/productsD.jpg" alt="" class="item__swiper-img">
             </div>
-            <div class="product__desc">
-              <span class="product__desc-title">Ruby</span>
-              <span class="product__desc-price">$999</span>
+            <div class="swiper-slide item__swiper-box">
+              <img src="../../assets/img/productsD.jpg" alt="" class="item__swiper-img">
             </div>
-          </a>
+            <div class="swiper-slide item__swiper-box">
+              <img src="../../assets/img/productsD.jpg" alt="" class="item__swiper-img">
+            </div>
+            <div class="swiper-slide item__swiper-box">
+              <img src="../../assets/img/productsD.jpg" alt="" class="item__swiper-img">
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="product__card" data-id="1">
-        <div class="product__tag" data-id="1" data-name="Diamond" data-category="Luxury" data-price="999" >
-          <a href="item.html" class="product__tag-card">
-            <div class="product__box">
-              <img src="../../assets/img/productsD.jpg" alt="" class="product__box-img">
-              <div class="swiper product__swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/crystal.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/emerald.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/flyd.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/topaz.jpg" alt="" class="product__swiper-img"></div>
+      <div class="item__info">
+        <div class="item__info-sticky">
+          <h1 class="item__title">Quartz</h1>
+          <span class="item__code">Index: #984859584</span>
+          <span class="item__price">$999</span>
+          <form class="item__form">
+            <div class="item__variant">
+              <div class="item__variant-title"><b>Size</b> - select size</div>
+              <div class="item__variant-select">
+                <div class="item__variant-pick">
+                  <input type="radio" class="item__variant-input" id="variant-id">
+                  <label for="variant-id" class="item__variant-label">1</label>
+                </div>
+                <div class="item__variant-pick">
+                  <input type="radio" class="item__variant-input" id="variant-id">
+                  <label for="variant-id" class="item__variant-label">2</label>
+                </div>
+                <div class="item__variant-pick">
+                  <input type="radio" class="item__variant-input" id="variant-id">
+                  <label for="variant-id" class="item__variant-label">3</label>
+                </div>
+                <div class="item__variant-pick">
+                  <input type="radio" class="item__variant-input" id="variant-id">
+                  <label for="variant-id" class="item__variant-label">4</label>
                 </div>
               </div>
             </div>
-            <div class="product__desc">
-              <span class="product__desc-title">Ruby</span>
-              <span class="product__desc-price">$999</span>
-            </div>
-          </a>
+            <button class="item__button">Add to cart</button>
+          </form>
+          <div class="item__promotion"><b>-30%</b> on all goods</div>
+
+          <div class="item__delivery">
+            <ul class="item__delivery-list">
+              <li class="item__delivery-li"><i class='bx bxs-truck'></i>Shipping in 24-72h</li>
+              <li class="item__delivery-li"><i class='bx bx-wallet'></i>Free delivery from $149</li>
+              <li class="item__delivery-li"><i class='bx bxs-hourglass-top'></i>30 days to return</li>
+            </ul>
+          </div>
+
         </div>
       </div>
-      <div class="product__card" data-id="1">
-        <div class="product__tag" data-id="1" data-name="Diamond" data-category="Luxury" data-price="999" >
-          <a href="item.html" class="product__tag-card">
-            <div class="product__box">
-              <img src="../../assets/img/productsD.jpg" alt="" class="product__box-img">
-              <div class="swiper product__swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/crystal.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/emerald.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/flyd.jpg" alt="" class="product__swiper-img"></div>
-                  <div class="swiper-slide product__swiper-card"><img src="../../assets/img/topaz.jpg" alt="" class="product__swiper-img"></div>
-                </div>
-              </div>
-            </div>
-            <div class="product__desc">
-              <span class="product__desc-title">Ruby</span>
-              <span class="product__desc-price">$999</span>
-            </div>
-          </a>
+      <div class="item__desc">
+        <div class="item__details">
+          <p class="item__desc-title">Product description</p>
+          <p class="item__desc-info hide">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat sunt nihil
+            accusamus mollitia atque aliquid debitis at illo, dignissimos consequuntur.</p>
+        </div>
+
+        <div class="item__details">
+          <p class="item__desc-title">Shipping</p>
+          <div class="item__desc-methods  hide">
+            <p class="item__desc-subtitle">Free delivery from $149</p>
+            <p class="item__desc-methods-title">Delivery methods:</p>
+            <ul class="item__desc-methods-item">
+              <li>Stationary store - Free of charge! (1-3 working days)</li>
+              <li>Inpost courier - PLN 13.90 (1 working day)</li>
+              <li>InPost parcel machines - PLN 15.90 (1 working day)</li>
+            </ul>
+            <p class="item__desc-link">More information on delivery <a href="@">here.</a></p>
+          </div>
         </div>
       </div>
     </div>

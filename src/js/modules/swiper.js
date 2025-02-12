@@ -38,11 +38,20 @@ const newSwiper = new Swiper('.new__swiper',{
 	}
 })
 
-const productSwiper = new Swiper ('.product__swiper',{
+const productSwiper = new Swiper('.product__swiper',{
 	loop: true,
 	spaceBetween:5,
 
 	slidesPerView:4
 	
 	
+})
+
+const itemSwiper = new Swiper('.item__swiper',{
+	spaceBetween:20,
+	loop:true,
+
+	autoplay: {
+		delay: 5000,
+	},
 })

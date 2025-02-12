@@ -38,6 +38,7 @@ export default defineConfig( {
 				login: resolve(__dirname, './src/pages/login/login.html'),
 				shop: resolve(__dirname, './src/pages/shop/shopList.html'),
 				items: resolve(__dirname, './src/pages/shop/products.html'),
+				item: resolve(__dirname, './src/pages/shop/item.html'),
 			},
 			external:['collect.js']
 		},

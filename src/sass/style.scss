@@ -221,7 +221,7 @@ body.light-theme {
 			padding: 0rem 2rem;
 			width: 100%;
 			height: 100%;
-			transition: .4s;
+			transition: 0.4s;
 		}
 	}
 	&__list {
@@ -567,7 +567,7 @@ body.light-theme {
 	}
 }
 
-// ========= NEWSLETTER ==========
+// ========= FOOTER ==========
 .footer {
 	&__container {
 		row-gap: 3rem;
@@ -733,8 +733,8 @@ body.light-theme {
 	&__tag {
 		position: relative;
 		height: 400px;
-		
-		&-card{
+
+		&-card {
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
@@ -743,19 +743,17 @@ body.light-theme {
 	}
 	&__card {
 		margin: 3rem 0;
-		transition: .4s;
-		
+		transition: 0.4s;
+
 		&:hover {
 			box-shadow: 5px 14px 22px var(--card-shadow);
 		}
 	}
 	&__box {
-		
 		display: flex;
 		flex-direction: column;
-		
+
 		&-img {
-			
 			width: 100%;
 			max-height: 250px;
 			object-fit: cover;
@@ -770,22 +768,17 @@ body.light-theme {
 		width: 100%;
 		padding: 0.5em;
 		background-color: #fff;
-		transition: .4s;
-		
-		
-		
-		&-card{
+		transition: 0.4s;
+
+		&-card {
 			display: flex;
 			overflow: hidden;
-			height: clamp(50px,15vh,60px);
+			height: clamp(50px, 15vh, 60px);
 		}
 		&-img {
 			object-fit: cover;
 			width: 100%;
-			
 			z-index: 10;
-		
-			
 		}
 	}
 
@@ -798,9 +791,166 @@ body.light-theme {
 		color: var(--title-color);
 	}
 }
-.product__card:hover .product__swiper{
+.product__card:hover .product__swiper {
 	display: block;
+}
+
+// ============ PRODUCT ITEM ===========
+.item {
+	margin-top: 6rem;
 	
+	
+	&__slider {
+		display: flex;
+		gap: 2rem;
+	}
+	&__thumbs {
+		display: none;
+	}
+	&__swiper {
+		width: clamp(280px,80dvw,500px);
+		// max-height: 500px;
+		overflow: hidden;
+		&-box{
+			display: flex;
+			justify-content: center;
+		}
+
+		&-img {
+			width: 100%;
+			max-width: 500px;
+			// height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__info {
+		margin-top: 1rem;
+		padding:0 2rem;
+
+		&-sticky {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	&__title {
+		font-size: var(--h1-font-size);
+		color: var(--title-color);
+		margin-bottom: var(--mb-0-5);
+		
+	}
+	&__code{
+		font-size: var(--h3-font-size);
+		color: var(--text-color);
+		margin-bottom: var(--mb-2);
+	}
+	&__price{
+		font-size: var(--biggest-font-size);
+		color: var(--title-color);
+		font-weight: var(--font-bold);
+		margin-bottom: var(--mb-2-5);
+	}
+
+	&__variant{
+		display: grid;
+		gap: 1rem;
+		margin-bottom: var(--mb-2-5);
+
+		&-title{
+			color: var(--title-color);
+			font-size: var(--h3-font-size);
+		}
+		&-select{
+			display: flex;
+			gap: 1rem;
+		}
+	}
+	&__button{
+		margin-bottom: var(--mb-2-5);
+		padding: 1rem 1.5rem;
+		width: 100%;
+		color: var(--title-color);
+		background-color: var(--button-color);
+		font-size: var(--h1-font-size);
+		transition: .4s;
+
+		&:hover{
+			background-color: var(--button-hover);
+		}
+	}
+	&__promotion{
+		text-align: center;
+		color: var(--title-color);
+		font-size: var(--h2-font-size);
+		padding-bottom: var(--mb-2-5);
+		border-bottom: 1px solid var(--scroll-shadow);
+	}
+
+	&__delivery{
+		padding: 2.5rem 0;
+		color: var(--title-color);
+		border-bottom: 1px solid var(--scroll-shadow);
+
+		&-list{
+			display: grid;
+			gap: 2rem;
+			font-size: var(--h2-font-size);
+		}
+		&-li{
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			
+		}
+	}
+	&__desc{
+		display: flex;
+		flex-direction: column;
+		padding:0 2rem;
+		
+
+		&-title{
+			
+			padding: 2rem 0;
+			color: var(--title-color);
+			font-size: var(--h2-font-size);
+			font-weight: var(--font-bold);
+			cursor: pointer;
+		}
+		&-info,&-methods,&-link{
+			margin: 2rem 0;
+			color: var(--title-color);
+			font-size: var(--h3-font-size);
+			line-height: 22px;
+			
+		}
+		&-subtitle{
+			margin-bottom: var(--mb-2);
+
+			
+		}
+		&-methods{
+			&-item{
+				
+				margin: 1rem 0 0 3rem;
+
+				li{
+					list-style: disc;
+				}
+			}
+		}
+
+	}
+	&__details{
+		// height: 20%;
+		overflow: hidden;
+		border-bottom: 1px solid var(--scroll-shadow);
+		transition: 2.5s;
+
+	}
+
+}
+.hide{
+	display: none;
 }
 // ========== MEDIA QUERIES ============
 @media screen and (width > 576px) {
@@ -939,6 +1089,36 @@ body.light-theme {
 			margin-left: -4rem;
 		}
 	}
+
+	.item {
+		&__container{
+			grid-template-columns: repeat(2,1fr);
+			row-gap: 3rem;
+		}
+		&__thumbs {
+			display: grid;
+			gap: 1rem;
+		}
+		&__thumb {
+			&-img {
+				width: 100px;
+				height: 100%;
+				object-fit: cover;
+				cursor: pointer;
+				
+			}
+		}
+		&__swiper {
+			width: clamp(280px,40dvw,450px);
+		}
+		&__info {
+			position: relative;
+			&-sticky {
+				position: sticky;
+				top: 40px;
+			}
+		}
+	}
 }
 
 @media screen and (width > 992px) {
@@ -1009,7 +1189,8 @@ body.light-theme {
 	.newsletter,
 	.footer,
 	.shop,
-	.product {
+	.product,
+	.item {
 		margin-top: 10rem;
 	}
 }
