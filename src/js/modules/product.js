@@ -4,8 +4,8 @@ const swiperWraper = document.querySelectorAll('.swiper-wrapper')
 
 const changeImg = (e)=>{
     e.preventDefault();
-    const swapImg = e.target.parentElement.parentElement.parentElement.previousElementSibling
-    
+    const swapImg = e.target.parentElement.parentElement.parentElement.previousElementSibling.firstChild.nextElementSibling
+   
     const targetImg = e.target.getAttribute('src')
 
     
@@ -13,8 +13,8 @@ const changeImg = (e)=>{
     
 }
 
+const mainImg = document.querySelector('.product__box-img').getAttribute('src')
 const prevImg = ()=>{
-    const mainImg = document.querySelector('.product__box-img').getAttribute('src')
     const swapImg = document.querySelectorAll('.product__box-img')
     swapImg.forEach(item=>{
         item.setAttribute('src',mainImg)

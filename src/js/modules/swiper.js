@@ -51,7 +51,5 @@ const itemSwiper = new Swiper('.item__swiper',{
 	spaceBetween:20,
 	loop:true,
 
-	autoplay: {
-		delay: 5000,
-	},
+	
 })

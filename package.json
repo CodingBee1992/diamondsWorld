@@ -27,6 +27,7 @@
     "vite-plugin-inspect": "^0.10.6"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "collect.js": "^4.36.1",
     "json-server": "^1.0.0-beta.3",
     "swiper": "^11.2.2"
