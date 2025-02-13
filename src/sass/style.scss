@@ -798,8 +798,7 @@ body.light-theme {
 // ============ PRODUCT ITEM ===========
 .item {
 	margin-top: 6rem;
-	
-	
+
 	&__slider {
 		display: flex;
 		gap: 2rem;
@@ -808,10 +807,10 @@ body.light-theme {
 		display: none;
 	}
 	&__swiper {
-		width: clamp(280px,80dvw,500px);
+		width: clamp(280px, 80dvw, 500px);
 		// max-height: 500px;
 		overflow: hidden;
-		&-box{
+		&-box {
 			display: flex;
 			justify-content: center;
 		}
@@ -825,7 +824,7 @@ body.light-theme {
 	}
 	&__info {
 		margin-top: 1rem;
-		padding:0 2rem;
+		padding: 0 2rem;
 
 		&-sticky {
 			display: flex;
@@ -836,48 +835,63 @@ body.light-theme {
 		font-size: var(--h1-font-size);
 		color: var(--title-color);
 		margin-bottom: var(--mb-0-5);
-		
 	}
-	&__code{
+	&__code {
 		font-size: var(--h3-font-size);
 		color: var(--text-color);
 		margin-bottom: var(--mb-2);
 	}
-	&__price{
+	&__price {
 		font-size: var(--biggest-font-size);
 		color: var(--title-color);
 		font-weight: var(--font-bold);
 		margin-bottom: var(--mb-2-5);
 	}
 
-	&__variant{
+	&__variant {
 		display: grid;
 		gap: 1rem;
 		margin-bottom: var(--mb-2-5);
 
-		&-title{
+		&-title {
 			color: var(--title-color);
 			font-size: var(--h3-font-size);
 		}
-		&-select{
+		&-select {
 			display: flex;
 			gap: 1rem;
 		}
+		&-pick {
+			text-align: center;
+			gap: 0.5rem;
+		}
+		&-label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-width: 60px;
+			min-height: 45px;
+			font-size: 2rem;
+			color: var(--title-color);
+			border: 1px solid var(--card-color);
+			border-radius: 10px;
+			cursor: pointer;
+		}
 	}
-	&__button{
+	&__button {
 		margin-bottom: var(--mb-2-5);
 		padding: 1rem 1.5rem;
 		width: 100%;
 		color: var(--title-color);
 		background-color: var(--button-color);
 		font-size: var(--h1-font-size);
-		transition: .4s;
+		transition: 0.4s;
 
-		&:hover{
+		&:hover {
 			background-color: var(--button-hover);
 		}
 	}
-	&__promotion{
+	&__promotion {
 		text-align: center;
 		color: var(--title-color);
 		font-size: var(--h2-font-size);
@@ -885,71 +899,74 @@ body.light-theme {
 		border-bottom: 1px solid var(--scroll-shadow);
 	}
 
-	&__delivery{
+	&__delivery {
 		padding: 2.5rem 0;
 		color: var(--title-color);
 		border-bottom: 1px solid var(--scroll-shadow);
 
-		&-list{
+		&-list {
 			display: grid;
 			gap: 2rem;
 			font-size: var(--h2-font-size);
 		}
-		&-li{
+		&-li {
 			display: flex;
 			align-items: center;
 			gap: 1rem;
-			
 		}
 	}
-	&__desc{
+	&__desc {
 		display: flex;
 		flex-direction: column;
-		padding:0 2rem;
-		
+		padding: 0 2rem;
 
-		&-title{
-			
+		&-title {
 			padding: 2rem 0;
 			color: var(--title-color);
 			font-size: var(--h2-font-size);
 			font-weight: var(--font-bold);
 			cursor: pointer;
 		}
-		&-info,&-methods,&-link{
+		&-info,
+		&-methods,
+		&-link {
 			margin: 2rem 0;
 			color: var(--title-color);
 			font-size: var(--h3-font-size);
 			line-height: 22px;
-			
 		}
-		&-subtitle{
+		&-subtitle {
 			margin-bottom: var(--mb-2);
-
-			
 		}
-		&-methods{
-			&-item{
-				
+		&-methods {
+			&-item {
 				margin: 1rem 0 0 3rem;
 
-				li{
+				li {
 					list-style: disc;
 				}
 			}
 		}
-
 	}
-	&__details{
+	&__details {
 		// height: 20%;
 		overflow: hidden;
 		border-bottom: 1px solid var(--scroll-shadow);
 		transition: 2.5s;
-
 	}
-
 }
-.hide{
+
+.item__variant input[type=radio]{
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+}
+.item__variant input[type=radio]:checked+.item__variant-label{
+	box-shadow: inset 0 0 0 1px var(--card-color);
+	
+	
+}
+.hide {
 	display: none;
 }
 // ========== MEDIA QUERIES ============
@@ -1091,8 +1108,8 @@ body.light-theme {
 	}
 
 	.item {
-		&__container{
-			grid-template-columns: repeat(2,1fr);
+		&__container {
+			grid-template-columns: repeat(2, 1fr);
 			row-gap: 3rem;
 		}
 		&__thumbs {
@@ -1105,11 +1122,10 @@ body.light-theme {
 				height: 100%;
 				object-fit: cover;
 				cursor: pointer;
-				
 			}
 		}
 		&__swiper {
-			width: clamp(280px,40dvw,450px);
+			width: clamp(280px, 40dvw, 450px);
 		}
 		&__info {
 			position: relative;
