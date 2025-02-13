@@ -1,6 +1,5 @@
 // ============= SWAP MAIN IMG =============
 const cardList = document.querySelectorAll('.product__swiper-card')
-const mainImg = document.querySelector('.product__box-img').getAttribute('src')
 const swiperWraper = document.querySelectorAll('.swiper-wrapper')
 
 const changeImg = (e)=>{
@@ -9,12 +8,13 @@ const changeImg = (e)=>{
     
     const targetImg = e.target.getAttribute('src')
 
-    console.log(mainImg);
+    
     swapImg.setAttribute('src', targetImg)
     
 }
 
 const prevImg = ()=>{
+    const mainImg = document.querySelector('.product__box-img').getAttribute('src')
     const swapImg = document.querySelectorAll('.product__box-img')
     swapImg.forEach(item=>{
         item.setAttribute('src',mainImg)
