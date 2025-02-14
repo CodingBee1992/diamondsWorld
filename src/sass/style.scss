@@ -618,14 +618,26 @@ body.light-theme {
 // ========== SHOP LIST ============
 .shop {
 	margin-top: 5rem;
-	
+
 	&__item {
+		position: relative;
+		display: flex;
+		gap: 2rem;
 		padding: var(--mb-1);
 		margin-bottom: var(--mb-3);
 		border-radius: 5px;
 		box-shadow: 5px 14px 22px var(--profil-shadow);
+		overflow: hidden;
 
-		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #00000055;
+		}
 	}
 	&__title {
 		font-size: var(--h2-font-size);
@@ -635,23 +647,20 @@ body.light-theme {
 	}
 	&__card {
 		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		margin-bottom: var(--mb-2);
+		gap: 1rem;
+		// margin-bottom: var(--mb-2);
 
 		&-img {
-			margin-left: auto;
-			margin-right: auto;
-			width: 200px;
-			border-radius: 5px;
+			// margin-left: auto;
+			// margin-right: auto;
+			width: 80px;
+			height: 100px;
+			object-fit: cover;
 		}
 	}
 
 	&__input {
 		&-check {
-			display: flex;
-			justify-self: flex-end;
-			// margin-left: auto;
 			width: 20px;
 			height: 20px;
 			background-color: var(--body-color);
@@ -665,22 +674,23 @@ body.light-theme {
 	&__details {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 
 		&-content {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
-			gap: 2rem;
+
+			gap: 1rem;
 			margin-bottom: var(--mb-2);
 		}
 		&-name,
-		&-price,&-size {
-			font-size: var(--h2-font-size);
+		&-price,
+		&-size {
+			font-size: var(--h3-font-size);
 			color: var(--title-color);
 		}
 		&-amount {
 			display: flex;
-			justify-content: center;
 			gap: 2rem;
 		}
 		&-number {
@@ -701,11 +711,12 @@ body.light-theme {
 		}
 		&-trash {
 			display: flex;
-			// justify-content: flex-end;
+			justify-content: flex-end;
 			margin-left: auto;
 			font-size: 2.5rem;
 			cursor: pointer;
 			transition: 0.4s;
+			z-index: 20;
 			&:hover {
 				color: red;
 			}
@@ -713,8 +724,7 @@ body.light-theme {
 	}
 
 	.summary {
-		
-		&__container{
+		&__container {
 			position: sticky;
 			top: 100px;
 			display: flex;
@@ -723,162 +733,162 @@ body.light-theme {
 			padding: 1rem;
 			max-height: 600px;
 			background-color: #f5f5f5;
-
 		}
-		
-		&__title{
+
+		&__title {
 			color: #000;
 			font-size: var(--h1-font-size);
-
 		}
-		&__form{
+		&__form {
 			margin-top: 2rem;
 			border-bottom: 1px solid var(--scroll-shadow);
 
-			&-code{
+			&-code {
 				margin-bottom: var(--mb-0-5);
 				font-size: var(--small-font-size);
 				font-weight: var(--font-bold);
-				
 			}
-			&-content{
+			&-content {
 				display: flex;
 				gap: 1rem;
 				margin-bottom: var(--mb-1);
 			}
-			&-input{
+			&-input {
 				width: 100%;
-				padding: .5rem 1rem;
+				padding: 0.5rem 1rem;
 				border-radius: 5px;
-				
 			}
-			&-button{
-				padding: .5rem;
+			&-button {
+				padding: 0.5rem;
 				color: #000;
 				background-color: #fff;
 				border: 1px solid #000;
 				border-radius: 10px;
 			}
-			.bx-check{
+			.bx-check {
 				font-size: 3rem;
 			}
-
 		}
-		&__error{
+		&__error {
 			visibility: hidden;
 			margin-bottom: var(--mb-2);
-			color: #BE0000;
+			color: #be0000;
 			font-size: var(--small-font-size);
 		}
 
-		&__items{
+		&__items {
 			display: grid;
 			// gap: .5rem;
 			margin-top: 1rem;
 			border-bottom: 1px solid #000;
 		}
-		&__item{
+		&__item {
 			display: flex;
 			justify-content: space-between;
 			line-height: 2.5rem;
 
-			&-title,&-value{
+			&-title,
+			&-value {
 				font-size: var(--h3-font-size);
 				color: #000;
 			}
-			&:last-child{
+			&:last-child {
 				margin-bottom: var(--mb-2);
 			}
 		}
 
-		&__delivery{
-			
+		&__delivery {
 			border-bottom: 1px solid #000;
-			
-			&-title{
+
+			&-title {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				gap: .5rem;
+				gap: 0.5rem;
 				margin-bottom: 1rem;
 				font-size: var(--h2-font-size);
 			}
-			.bxs-truck{
+			.bxs-truck {
 				font-size: 3rem;
 			}
 		}
-		&__total{
+		&__total {
 			display: flex;
 			justify-content: space-between;
 			margin: 1rem 0;
 
-			&-title,&-value{
+			&-title,
+			&-value {
 				font-size: var(--h2-font-size);
 				color: #000;
 				text-transform: uppercase;
 			}
-			&-value{
+			&-value {
 				font-weight: var(--font-bold);
 			}
 		}
-		&__button{
+		&__button {
 			padding: 1rem 0;
 			text-align: center;
 			background-color: #252422;
 			border-radius: 5px;
 
-			&-link{
+			&-link {
 				color: #fff;
 				font-size: var(--h2-font-size);
 			}
 		}
-		&__payments{
+		&__payments {
 			margin-top: 1rem;
-			&-title{
-				margin-bottom: .5rem;
+			&-title {
+				margin-bottom: 0.5rem;
 				color: #000;
 				font-size: var(--h2-font-size);
 			}
 		}
 	}
 }
+
+.shop__input-check:checked + .shop__item::after {
+	display: none;
+}
 // SUMMARY STICKY
-.summary{
-	&__sticky{
+.summary {
+	&__sticky {
 		// display: block;
 		position: fixed;
 		bottom: 0;
 		padding: 2rem;
 		width: 100%;
 		background-color: #fff;
-		
 	}
-	&__total{
+	&__total {
 		display: flex;
 		justify-content: space-between;
 		margin: 1rem 0;
 
-		&-title,&-value{
+		&-title,
+		&-value {
 			font-size: var(--h1-font-size);
 			color: #000;
 		}
-		&-value{
+		&-value {
 			font-weight: var(--font-bold);
 		}
 	}
-	&__button{
+	&__button {
 		padding: 1rem 0;
 		text-align: center;
 		background-color: #252422;
 		border-radius: 5px;
 
-		&-link{
+		&-link {
 			color: #fff;
 			font-size: var(--h2-font-size);
 		}
 	}
 }
-.summaryHide{
+.summaryHide {
 	display: none;
 }
 
@@ -892,14 +902,12 @@ body.light-theme {
 	&__tag {
 		position: relative;
 		height: 400px;
-		
 
 		&-card {
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
 			height: 100%;
-		
 		}
 	}
 	&__card {
@@ -937,12 +945,12 @@ body.light-theme {
 			display: flex;
 			overflow: hidden;
 			height: clamp(50px, 15vh, 60px);
-			z-index:40;
+			z-index: 40;
 		}
 		&-img {
 			object-fit: cover;
 			width: 100%;
-			z-index:40;
+			z-index: 40;
 		}
 	}
 
@@ -1095,8 +1103,6 @@ body.light-theme {
 		&-info,
 		&-methods,
 		&-link {
-		
-			
 			color: var(--title-color);
 			font-size: var(--h3-font-size);
 			line-height: 22px;
@@ -1115,7 +1121,8 @@ body.light-theme {
 				}
 			}
 		}
-		&-methods,&-info{
+		&-methods,
+		&-info {
 			display: none;
 			padding-bottom: 2rem;
 		}
@@ -1128,21 +1135,19 @@ body.light-theme {
 	}
 }
 
-.item__variant input[type=radio]{
+.item__variant input[type='radio'] {
 	visibility: hidden;
 	opacity: 0;
 	position: absolute;
 }
-.item__variant input[type=radio]:checked ~ .item__variant-label{
+.item__variant input[type='radio']:checked ~ .item__variant-label {
 	box-shadow: inset 0 0 0 1px var(--card-color);
-	
-	
 }
-.hide ~ .item__desc-info,.hide ~ .item__desc-methods {
+.hide ~ .item__desc-info,
+.hide ~ .item__desc-methods {
 	display: block;
 	// max-height: 2000px;
 	// transition: max-height 1s ease-in-out;
-
 }
 // ========== MEDIA QUERIES ============
 @media screen and (width > 576px) {
@@ -1171,33 +1176,33 @@ body.light-theme {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
-	.shop {
-		&__item {
-			display: flex;
-			gap: 2rem;
-		}
-		&__input {
-			&-check {
-				justify-self: flex-start;
-			}
-		}
-		&__card {
-			flex-direction: row;
-			align-items: start;
-		}
-		&__details {
-			width: 100%;
+	// .shop {
+	// 	&__item {
+	// 		display: flex;
+	// 		gap: 2rem;
+	// 	}
+	// 	&__input {
+	// 		&-check {
+	// 			justify-self: flex-start;
+	// 		}
+	// 	}
+	// 	&__card {
+	// 		flex-direction: row;
+	// 		align-items: start;
+	// 	}
+	// 	&__details {
+	// 		width: 100%;
 
-			&-content {
-				align-items: flex-start;
-			}
-			&-amount {
-				justify-content: flex-start;
-				margin-bottom: var(--mb-2);
-			}
-		}
-	}
-	.summary__sticky{
+	// 		&-content {
+	// 			align-items: flex-start;
+	// 		}
+	// 		&-amount {
+	// 			justify-content: flex-start;
+	// 			margin-bottom: var(--mb-2);
+	// 		}
+	// 	}
+	// }
+	.summary__sticky {
 		display: none;
 	}
 }
@@ -1313,7 +1318,12 @@ body.light-theme {
 			}
 		}
 	}
-	
+	.shop {
+		&__container {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+		}
+	}
 }
 
 @media screen and (width > 992px) {
@@ -1387,12 +1397,5 @@ body.light-theme {
 	.product,
 	.item {
 		margin-top: 10rem;
-	}
-
-	.shop{
-		&__container{
-			grid-template-columns: repeat(2,1fr);
-			gap: 2rem;
-		}
 	}
 }
