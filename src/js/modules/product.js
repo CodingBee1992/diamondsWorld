@@ -13,11 +13,14 @@ const changeImg = (e)=>{
     
 }
 
-const mainImg = document.querySelector('.product__box-img').getAttribute('src')
+const mainImg = document.querySelector('.product__box-img')
+const mainSrc = mainImg.getAttribute('src')
+
+
 const prevImg = ()=>{
     const swapImg = document.querySelectorAll('.product__box-img')
     swapImg.forEach(item=>{
-        item.setAttribute('src',mainImg)
+        item.setAttribute('src',mainSrc)
     })
 }
 
