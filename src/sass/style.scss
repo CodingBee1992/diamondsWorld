@@ -618,16 +618,14 @@ body.light-theme {
 // ========== SHOP LIST ============
 .shop {
 	margin-top: 5rem;
-
+	
 	&__item {
 		padding: var(--mb-1);
 		margin-bottom: var(--mb-3);
 		border-radius: 5px;
-		transition: 0.4s;
+		box-shadow: 5px 14px 22px var(--profil-shadow);
 
-		&:hover {
-			box-shadow: 5px 14px 22px var(--profil-shadow);
-		}
+		
 	}
 	&__title {
 		font-size: var(--h2-font-size);
@@ -676,7 +674,7 @@ body.light-theme {
 			margin-bottom: var(--mb-2);
 		}
 		&-name,
-		&-price {
+		&-price,&-size {
 			font-size: var(--h2-font-size);
 			color: var(--title-color);
 		}
@@ -713,14 +711,175 @@ body.light-theme {
 			}
 		}
 	}
-	&__price {
-		display: flex;
-		justify-self: flex-end;
-		flex-direction: column;
-		gap: 1rem;
-		text-align: right;
-		font-size: var(--h1-font-size);
+
+	.summary {
+		
+		&__container{
+			position: sticky;
+			top: 100px;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			padding: 1rem;
+			max-height: 600px;
+			background-color: #f5f5f5;
+
+		}
+		
+		&__title{
+			color: #000;
+			font-size: var(--h1-font-size);
+
+		}
+		&__form{
+			margin-top: 2rem;
+			border-bottom: 1px solid var(--scroll-shadow);
+
+			&-code{
+				margin-bottom: var(--mb-0-5);
+				font-size: var(--small-font-size);
+				font-weight: var(--font-bold);
+				
+			}
+			&-content{
+				display: flex;
+				gap: 1rem;
+				margin-bottom: var(--mb-1);
+			}
+			&-input{
+				width: 100%;
+				padding: .5rem 1rem;
+				border-radius: 5px;
+				
+			}
+			&-button{
+				padding: .5rem;
+				color: #000;
+				background-color: #fff;
+				border: 1px solid #000;
+				border-radius: 10px;
+			}
+			.bx-check{
+				font-size: 3rem;
+			}
+
+		}
+		&__error{
+			visibility: hidden;
+			margin-bottom: var(--mb-2);
+			color: #BE0000;
+			font-size: var(--small-font-size);
+		}
+
+		&__items{
+			display: grid;
+			// gap: .5rem;
+			margin-top: 1rem;
+			border-bottom: 1px solid #000;
+		}
+		&__item{
+			display: flex;
+			justify-content: space-between;
+			line-height: 2.5rem;
+
+			&-title,&-value{
+				font-size: var(--h3-font-size);
+				color: #000;
+			}
+			&:last-child{
+				margin-bottom: var(--mb-2);
+			}
+		}
+
+		&__delivery{
+			
+			border-bottom: 1px solid #000;
+			
+			&-title{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: .5rem;
+				margin-bottom: 1rem;
+				font-size: var(--h2-font-size);
+			}
+			.bxs-truck{
+				font-size: 3rem;
+			}
+		}
+		&__total{
+			display: flex;
+			justify-content: space-between;
+			margin: 1rem 0;
+
+			&-title,&-value{
+				font-size: var(--h2-font-size);
+				color: #000;
+				text-transform: uppercase;
+			}
+			&-value{
+				font-weight: var(--font-bold);
+			}
+		}
+		&__button{
+			padding: 1rem 0;
+			text-align: center;
+			background-color: #252422;
+			border-radius: 5px;
+
+			&-link{
+				color: #fff;
+				font-size: var(--h2-font-size);
+			}
+		}
+		&__payments{
+			margin-top: 1rem;
+			&-title{
+				margin-bottom: .5rem;
+				color: #000;
+				font-size: var(--h2-font-size);
+			}
+		}
 	}
+}
+// SUMMARY STICKY
+.summary{
+	&__sticky{
+		// display: block;
+		position: fixed;
+		bottom: 0;
+		padding: 2rem;
+		width: 100%;
+		background-color: #fff;
+		
+	}
+	&__total{
+		display: flex;
+		justify-content: space-between;
+		margin: 1rem 0;
+
+		&-title,&-value{
+			font-size: var(--h1-font-size);
+			color: #000;
+		}
+		&-value{
+			font-weight: var(--font-bold);
+		}
+	}
+	&__button{
+		padding: 1rem 0;
+		text-align: center;
+		background-color: #252422;
+		border-radius: 5px;
+
+		&-link{
+			color: #fff;
+			font-size: var(--h2-font-size);
+		}
+	}
+}
+.summaryHide{
+	display: none;
 }
 
 // ============ PRODUCT LIST PAGE ============
@@ -1033,10 +1192,13 @@ body.light-theme {
 				align-items: flex-start;
 			}
 			&-amount {
-				justify-content: flex-end;
+				justify-content: flex-start;
 				margin-bottom: var(--mb-2);
 			}
 		}
+	}
+	.summary__sticky{
+		display: none;
 	}
 }
 
@@ -1151,6 +1313,7 @@ body.light-theme {
 			}
 		}
 	}
+	
 }
 
 @media screen and (width > 992px) {
@@ -1224,5 +1387,12 @@ body.light-theme {
 	.product,
 	.item {
 		margin-top: 10rem;
+	}
+
+	.shop{
+		&__container{
+			grid-template-columns: repeat(2,1fr);
+			gap: 2rem;
+		}
 	}
 }
