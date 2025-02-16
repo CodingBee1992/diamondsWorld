@@ -116,6 +116,7 @@ const itemDescription = item => {
 const itemContainer = document.querySelector('.item__container')
 console.log(itemContainer);
 
+
 const addItem = (id,itemList) => {
   itemContainer.textContent = ''
 	itemList.forEach(item => {

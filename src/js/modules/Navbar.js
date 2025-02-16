@@ -1,7 +1,3 @@
-
-
-
-
 // import styles bundle
 // import 'swiper/css/bundle';
 
@@ -111,4 +107,3 @@ const scrollActive = ()=>{
 }
 
 window.addEventListener('scroll',scrollActive)
-
