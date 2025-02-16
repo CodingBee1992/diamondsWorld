@@ -1,32 +1,37 @@
 import Swiper from 'swiper'
 import 'swiper/css'
 import '../sass/style.scss'
-import './modules/Navbar'
+import './modules/navbar'
 import './modules/swiper'
-import './modules/ItemDesc'
+import './modules/toggleDescription'
 import './modules/selectSize'
-import './modules/summaryObserv'
+import './modules/summaryObserver'
+import './modules/swapImage'
 
-// import jsonData from '../assets/api/item.json' assert { type: 'json' }
-// import { get } from './modules/http.js'
-import './modules/product'
+// import './modules/uiItem'
 
-// const product = document.querySelectorAll('.product__card')
 
-// const createCard = e => {
-// 	// e.preventDefault()
+import { getItems } from './modules/productData'
+import { addItem } from './modules/UIproduct'
 
-// 	if (e.target.matches('.product__tag-card')) {
-// 		const id = e.target.parentElement.dataset.id
-// 		console.log(id)
-// 	}
-// }
+const product = document.querySelectorAll('.product__card')
 
-// const getItems = () => {
-// 	http.get(jsonData).then(data => {
-// 		console.log(data)
-// 	})
-// }
 
-// getItems()
-// product.forEach(item => item.addEventListener('click', createCard))
+
+const createCard = e => {
+	// e.preventDefault()
+
+	if (e.target.matches('.product__tag-card')) {
+		const cardId = e.target.parentElement.dataset.id
+
+		// cardId to number
+		const id = parseInt(cardId)
+
+        const productts = getItems()
+
+        
+		addItem(id, productts)
+	}
+}
+
+product.forEach(item => item.addEventListener('click', createCard))
