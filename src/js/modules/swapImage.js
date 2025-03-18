@@ -1,9 +1,16 @@
 // ============= SWAP MAIN IMG =============
 const cardList = document.querySelectorAll('.product__swiper-card')
 const swiperWraper = document.querySelectorAll('.swiper-wrapper')
-
+const prevImg = (e)=>{
+    const mainSrc = e.target.parentElement.parentElement.parentElement.previousElementSibling.firstChild.nextElementSibling.getAttribute('src')
+   
+   
+   
+   
+}
 const changeImg = (e)=>{
     e.preventDefault();
+   
     const swapImg = e.target.parentElement.parentElement.parentElement.previousElementSibling.firstChild.nextElementSibling
    
     const targetImg = e.target.getAttribute('src')
@@ -13,17 +20,9 @@ const changeImg = (e)=>{
     
 }
 
-const mainImg = document.querySelector('.product__box-img')
-const mainSrc = mainImg.getAttribute('src')
 
-const prevImg = ()=>{
-    
 
-    const swapImg = document.querySelectorAll('.product__box-img')
-    swapImg.forEach(item=>{
-        item.setAttribute('src',mainSrc)
-    })
-}
+
 
 
 cardList.forEach(item => item.addEventListener('mousemove',changeImg))

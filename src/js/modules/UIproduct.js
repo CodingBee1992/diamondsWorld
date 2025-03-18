@@ -1,4 +1,17 @@
-const itemImg = item => {
+import data from '../data'
+const URL = window.location.search
+
+const params = new URLSearchParams(URL)
+// let id
+// for(const value of params.values()){
+//   id = parseFloat(value)
+// }
+let id = parseFloat(params.get('id'))
+
+const item = data.find(item => item.id === id)
+console.log(item);
+
+const itemImg = (item) => {
 	const itemSlider = document.createElement('div')
 	itemSlider.classList.add('item__slider')
 	itemSlider.setAttribute('data-id', item.id)
@@ -112,20 +125,14 @@ const itemDescription = item => {
 	return itemDesc
 }
 
-
 const itemContainer = document.querySelector('.item__container')
-console.log(itemContainer);
 
+const addItem = (item) => {
 
-const addItem = (id,itemList) => {
-  itemContainer.textContent = ''
-	itemList.forEach(item => {
+  if(itemContainer){
 
-		if (item.id === id) {
-     
-			itemContainer.append(itemImg(item), itemInfo(item), itemDescription(item))
-		}
-	})
+    itemContainer.append(itemImg(item), itemInfo(item), itemDescription(item))
+  }
 }
 
-export { addItem }
+addItem(item)
