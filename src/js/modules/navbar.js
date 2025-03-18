@@ -100,7 +100,9 @@ const scrollActive = ()=>{
 			
 			navLinks.forEach(item => item.classList.remove('active'))
 
-			activeSection.classList.add('active')
+			if(activeSection){
+				activeSection.classList.add('active')
+			}
 		}
 
 	})

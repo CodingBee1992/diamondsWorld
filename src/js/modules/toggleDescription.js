@@ -1,28 +1,26 @@
-const itemDesc = document.querySelectorAll('.item__desc-title')
-
-const toggleDesc = e => {
-	const desc = e.target
-    
-    
-    
-    if(!desc.matches('.hide')){
-        hideDesc()
-        desc.classList.add('hide')
-    }else{
-        desc.classList.remove('hide')
-    }
-
-    
+const toggle = (descToggle) => {
 	
 
-}
+	const toggleDesc = e => {
+		const desc = e.target
+       
+		if (!desc.matches('.hide')) {
+			hideDesc()
+			desc.classList.add('hide')
+		} else {
+			desc.classList.remove('hide')
+		}
+	}
 
-const hideDesc = () => {
-	itemDesc.forEach(item => {
-		
+	const hideDesc = () => {
+		descToggle.forEach(item => {
 			item.classList.remove('hide')
-		
-	})
+		})
+	}
+
+	
+
+    return toggleDesc
 }
 
-itemDesc.forEach(item => item.addEventListener('click', toggleDesc))
+export default toggle

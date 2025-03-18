@@ -1,5 +1,6 @@
 import data from '../data.js'
 
+
 const products = () => {
 	const container = document.querySelector('.product__container')
 
@@ -8,10 +9,8 @@ const products = () => {
 		productCard.classList.add('product__card')
 		productCard.setAttribute('data-id', item.id)
 
-    
-   
 		productCard.innerHTML = `<div class="product__tag" data-id=${item.id} data-name=${item.title} data-category=${item.category} data-price=${item.price} >
-          <a href="item.html/?id=${item.id} class="product__tag-card">
+          <a href="item.html?id=${item.id} class="product__tag-card">
             <div class="product__box">
               <img src=${item.image} alt="" class="product__box-img">
              
@@ -31,10 +30,11 @@ const products = () => {
           </a>
         </div>`
 
-       if(container){
-        container.append(productCard)
-       }
+		if (container) {
+			container.append(productCard)
+		}
 	})
+	
 }
 
 products()

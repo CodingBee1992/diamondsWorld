@@ -1,6 +1,10 @@
 import data from '../data'
-const URL = window.location.search
+import { itemSwiper } from './swiper'
+import Swiper from 'swiper/bundle'
 
+import toggle from './toggleDescription'
+
+const URL = window.location.search
 const params = new URLSearchParams(URL)
 // let id
 // for(const value of params.values()){
@@ -9,14 +13,14 @@ const params = new URLSearchParams(URL)
 let id = parseFloat(params.get('id'))
 
 const item = data.find(item => item.id === id)
-console.log(item);
+console.log(item)
 
-const itemImg = (item) => {
+const itemImg = item => {
 	const itemSlider = document.createElement('div')
 	itemSlider.classList.add('item__slider')
 	itemSlider.setAttribute('data-id', item.id)
 
-	const [img1, img2, img3, img4] = item.images
+	const [img1, img2, img3] = item.images
 	const [thumb1, thumb2, thumb3, thumb4] = item.thumbs
 
 	itemSlider.innerHTML = `<div class="item__thumbs">
@@ -36,6 +40,9 @@ const itemImg = (item) => {
         <div class="swiper item__swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide item__swiper-box">
+              <img src="${item.image}" alt="" class="item__swiper-img">
+            </div>
+            <div class="swiper-slide item__swiper-box">
               <img src="${img1}" alt="" class="item__swiper-img">
             </div>
             <div class="swiper-slide item__swiper-box">
@@ -44,12 +51,17 @@ const itemImg = (item) => {
             <div class="swiper-slide item__swiper-box">
               <img src="${img3}" alt="" class="item__swiper-img">
             </div>
-            <div class="swiper-slide item__swiper-box">
-              <img src="${img4}" alt="" class="item__swiper-img">
-            </div>
           </div>
         </div>`
 
+	
+
+        const itemSwiper = new Swiper('.item__swiper',{
+          spaceBetween:20,
+          loop:true,
+        
+          
+        })
 	return itemSlider
 }
 
@@ -58,7 +70,7 @@ const itemInfo = item => {
 	itemInfo.classList.add('item__info')
 
 	itemInfo.innerHTML = ` <div class="item__info-sticky">
-          <h1 class="item__title">${item.name}</h1>
+          <h1 class="item__title">${item.title}</h1>
           <span class="item__code">Index: ${item.index}</span>
           <span class="item__price">$${item.price}</span>
           <form class="item__form">
@@ -122,17 +134,21 @@ const itemDescription = item => {
           </div>
         </div>`
 
+        const descToggle = itemDesc.querySelectorAll('.item__desc-title')
+       
+        
+        descToggle.forEach(item=>item.addEventListener('click',toggle(descToggle)))
+        
+
 	return itemDesc
 }
 
 const itemContainer = document.querySelector('.item__container')
 
-const addItem = (item) => {
-
-  if(itemContainer){
-
-    itemContainer.append(itemImg(item), itemInfo(item), itemDescription(item))
-  }
+const addItem = item => {
+	if (itemContainer) {
+		itemContainer.append(itemImg(item), itemInfo(item), itemDescription(item))
+	}
 }
 
 addItem(item)

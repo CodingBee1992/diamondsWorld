@@ -53,3 +53,7 @@ const itemSwiper = new Swiper('.item__swiper',{
 
 	
 })
+
+export {
+	itemSwiper
+}
