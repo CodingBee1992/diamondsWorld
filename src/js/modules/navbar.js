@@ -109,3 +109,18 @@ const scrollActive = ()=>{
 }
 
 window.addEventListener('scroll',scrollActive)
+const date = new Date()
+const formater = new Intl.DateTimeFormat('pl-PL',{
+	year: 'numeric',
+	month:'long',
+	day:'2-digit'
+})
+
+// const today = new Date().toLocaleDateString('en-GB', {  
+//     day:   'numeric',
+//     month: 'short',
+//     year:  'numeric',
+// });
+
+const newDate = formater.format(date)
+console.log(newDate);

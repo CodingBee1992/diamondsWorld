@@ -15,6 +15,7 @@ let id = parseFloat(params.get('id'))
 const item = data.find(item => item.id === id)
 console.log(item)
 
+
 const itemImg = item => {
 	const itemSlider = document.createElement('div')
 	itemSlider.classList.add('item__slider')
